@@ -108,30 +108,25 @@ void my_qsort(void* my_object, int length, int element_size, int compare_fun(con
 
 void main()
 {
-int arr[] = {1,7,6,3,4,11,9,10,2,15,8,14,5};
-double arr1[] = {1.3,7.7,6.4,3.333,4.66,11,9.7,10.4,2.77,15.8,8.6,14.6,5.6};
-//char* arr2[] = {"alex","John","serge","vlad"};
-int size_int = sizeof(int);
-int size_double = sizeof(double);
+    int arr[] = {1,7,6,3,4,11,9,10,2,15,8,14,5};
+    double arr1[] = {1.3,7.7,6.4,3.333,4.66,11,9.7,10.4,2.77,15.8,8.6,14.6,5.6};
+    //char* arr2[] = {"alex","John","serge","vlad"};
+    int size_int = sizeof(int);
+    int size_double = sizeof(double);
 
-//qsort(&arr, sizeof(arr)/size_int, size_int, *reverse_sort);
+    //qsort(&arr, sizeof(arr)/size_int, size_int, *reverse_sort);
 
-// for (m=0;m<sizeof(arr)/size_int;m++)
-// {
-//     printf("Sorted array: %d %d\n",m, arr[m]);
-// }
+    my_qsort(&arr, sizeof(arr)/size_int, size_int, *reverse_sort);
+    my_qsort(&arr1, sizeof(arr1)/size_double, size_double, *double_sort);
 
-my_qsort(&arr, sizeof(arr)/size_int, size_int, *reverse_sort);
-my_qsort(&arr1, sizeof(arr1)/size_double, size_double, *double_sort);
+    for (int m=0;m<sizeof(arr)/size_int;m++)
+    {
+        printf("Sorted array: %d %d\n",m, arr[m]);
+    }
 
-for (int m=0;m<sizeof(arr)/size_int;m++)
-{
-    printf("Sorted array: %d %d\n",m, arr[m]);
-}
-
-for (int m=0;m<sizeof(arr1)/size_double;m++)
-{
-    printf("Sorted array: %d %.3f\n",m, arr1[m]);
-}
+    for (int m=0;m<sizeof(arr1)/size_double;m++)
+    {
+        printf("Sorted array: %d %.3f\n",m, arr1[m]);
+    }
 
 }
