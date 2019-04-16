@@ -61,13 +61,12 @@ void my_qsort(void* my_object, int length, int element_size, int compare_fun(con
     k =(int) length / 2;
     if (k < 1) return;
     //printf("Variable k: %d\n", k);
-    i = length;
-    j = -1;
+   i = length;
+   //j = -1;
     while (j < i) 
     {   
         p = my_object + (k-1) * element_size;
         i = length-1;
-  // if (i <= 0) return;  
         j = 0;
         e =my_object + i * element_size;
         s = my_object + j * element_size;
@@ -91,7 +90,7 @@ void my_qsort(void* my_object, int length, int element_size, int compare_fun(con
             //printf("Values to swap: %d %d\n", *(int*) e, *(int*) s);
         my_swap(e,s,element_size);
    //  printf("Values after swap: %d %d\n", *(int*) e, *(int*) s);
-   //   if (i < 0) return;    
+
     
          
     }  
